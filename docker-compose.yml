@@ -1,0 +1,60 @@
+version: '3.7'
+
+services:
+  app:
+    image: node:18-alpine3.17
+    ports:
+      - '3000:3000'
+      - '9229:9229'
+    working_dir: /app
+    env_file:
+      - .env
+    volumes:
+      - '.:/app'
+      - '/etc/localtime:/etc/localtime:ro'
+    networks:
+      - ada
+    depends_on:
+      postgres:
+        condition: service_healthy
+    command: sh -c "yarn install && chmod 777 node_modules -Rf && yarn prisma db push && yarn debug"
+
+  postgres:
+    image: postgres:15-alpine3.17
+    ports:
+      - '5432:5432'
+    env_file:
+      - .env
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASS}
+      - POSTGRES_DB=${DB_NAME}
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    networks:
+      - ada
+    healthcheck:
+      test: pg_isready -U ${DB_USER} -d ${DB_NAME}
+      interval: 5s
+
+  pgweb:
+    image: sosedoff/pgweb
+    ports:
+      - '8081:8081'
+    env_file:
+      - .env
+    environment:
+      - DATABASE_URL=postgres://${DB_USER}:${DB_PASS}@${DB_HOST}:5432/${DB_NAME}?sslmode=disable
+    networks:
+      - ada
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+volumes:
+  postgres:
+    driver: local
+
+networks:
+  ada:
+    name: ada

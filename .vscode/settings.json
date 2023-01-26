@@ -1,0 +1,74 @@
+{
+
+  "files.autoSave": "onFocusChange",
+  "files.insertFinalNewline": true,
+  "files.eol": "\n",
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": false,
+  "files.watcherExclude": {
+    "**/node_modules/**": true,
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true
+  },
+
+  "workbench.activityBar.visible": true,
+  "workbench.activityBar.iconClickBehavior": "toggle",
+
+  "explorer.compactFolders": false,
+  "explorer.openEditors.visible": 0,
+  "explorer.autoReveal": false,
+  "explorer.incrementalNaming": "smart",
+
+  "editor.suggestSelection": "recentlyUsedByPrefix",
+  "editor.showFoldingControls": "always",
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.linkedEditing": true,
+  "editor.minimap.enabled": false,
+  "editor.suggest.preview": false,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": "active",
+  "editor.renderWhitespace": "selection",
+  "editor.codeActionsOnSave": [
+    "source.fixAll.eslint"
+  ],
+
+  "debug.allowBreakpointsEverywhere": true,
+  "debug.inlineValues": "off",
+  "debug.toolBarLocation": "docked",
+  "debug.console.wordWrap": true,
+  "debug.showInStatusBar": "never",
+
+  "eslint.enable": true,
+  "eslint.packageManager": "pnpm",
+  "eslint.validate": [
+    "javascript",
+    "typescript",
+    "vue",
+  ],
+
+  "auto-close-tag.disableOnLanguage": [
+    "typescript"
+  ],
+
+  "gitlens.showWhatsNewAfterUpgrades": false,
+
+  "material-icon-theme.activeIconPack": "nest",
+
+  "typescript.tsdk": "node_modules/typescript/lib",
+
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+
+  "yaml.maxItemsComputed": 5000,
+
+  "[json]": {
+    "editor.formatOnSave": false
+  },
+  "[jsonc]": {
+    "editor.formatOnSave": false
+  },
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma",
+    "editor.formatOnSave": true
+  }
+}

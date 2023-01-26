@@ -1,0 +1,22 @@
+{
+    "recommendations": [
+        "formulahendry.auto-close-tag",
+        "formulahendry.auto-rename-tag",
+        "mikestead.dotenv",
+        "naumovs.color-highlight",
+        "pranaygp.vscode-css-peek",
+        "ms-azuretools.vscode-docker",
+        "temitope1909.dotenv-intellisense",
+        "editorconfig.editorconfig",
+        "dbaeumer.vscode-eslint",
+        "eamodio.gitlens",
+        "ecmel.vscode-html-css",
+        "jasonlhy.hungry-delete",
+        "visualstudioexptteam.vscodeintellicode",
+        "christian-kohler.npm-intellisense",
+        "christian-kohler.path-intellisense",
+        "prisma.prisma",
+        "vue.vscode-typescript-vue-plugin",
+        "pkief.material-icon-theme"
+    ]
+}
